@@ -1,0 +1,14 @@
+version: '3'
+services:
+  djsonwheels.com:
+    image: 'webdevops/php-nginx:8.1-alpine'
+    ports:
+      - '80:80'
+    build: 
+      dockerfile: dockerfile
+      context: docker
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - '.:/app'
+
